@@ -5,6 +5,12 @@
 *.tfstate
 *.tfstate.*
 
+.idea/
+*.tfvars
+
+venv/
+.DS_Store
+
 # Crash log files
 crash.log
 

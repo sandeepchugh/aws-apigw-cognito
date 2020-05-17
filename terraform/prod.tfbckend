@@ -1,0 +1,5 @@
+bucket = "instiguide-tf-state-prod"
+dynamodb_table = "instiguide-tf-state-prod"
+key = "instiguide-profile-api"
+region = "us-east-1"
+encrypt = "true"
