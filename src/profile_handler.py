@@ -1,12 +1,8 @@
 import logging
-import os
-
 import boto3
 import jsons
 from botocore.exceptions import ClientError
-
 from src import config
-
 logger = logging.getLogger('lambda_function')
 
 
@@ -14,7 +10,7 @@ def get_user_profile(user_id, org_id):
     """
     Gets the user profile
     :param user_id: user id
-    :param org_id: school id
+    :param org_id: org id
     :return: dict
     """
     config_settings = config.get_config()
@@ -37,7 +33,7 @@ def delete_user_profile(user_id, org_id):
     """
         Deletes the user profile
         :param user_id: user id
-        :param org_id: school id
+        :param org_id: org id
         :return: None
         """
     config_settings = config.get_config()
@@ -47,7 +43,7 @@ def delete_user_profile(user_id, org_id):
     try:
         response = table.delete_item(Key={'user_id': user_id, 'org_id': org_id})
     except ClientError as e:
-        logger.error("Failed to delete profile for user {} and school {}:{}"
+        logger.error("Failed to delete profile for user {} and organization {}:{}"
                      .format(user_id, org_id, e.response['Error']['Message']))
 
 

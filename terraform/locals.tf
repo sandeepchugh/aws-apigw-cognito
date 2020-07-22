@@ -12,5 +12,5 @@ locals {
   dynamodb_hash_key = "user_id"
   dynamodb_sort_key = "org_id"
   lambda_function_name = "src.lambda_function.function_handler"
-  zone_id = "Z07698161KZO692TEV00R"
+  zone_id = var.zone_id
 }

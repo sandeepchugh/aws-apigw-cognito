@@ -9,6 +9,7 @@ variable "write_scope" {}
 variable "delete_scope" {}
 variable "user_pool_profileapi_client" {}
 variable "profile_api_url" {}
+variable "zone_id" {}
 variable "api_scopes" {
     type = "map"
     default = {

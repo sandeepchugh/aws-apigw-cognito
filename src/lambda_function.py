@@ -35,7 +35,7 @@ def function_handler(event, context):
 
     try:
         if http_method == "GET":
-            logger.info("Getting profile for user id {} and school id {}"
+            logger.info("Getting profile for user id {} and organization id {}"
                         .format(request_params["user_id"], request_params["org_id"]))
             user_profile = profile_handler.get_user_profile(request_params["user_id"], request_params["org_id"])
             if user_profile is None:
